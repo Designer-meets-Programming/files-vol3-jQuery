@@ -2,7 +2,7 @@
 <html lang="ja-JP">
 <head>
 	<meta charset="UTF-8">
-	<title>DmP03 step2</title>
+	<title>DmP03 step3</title>
 	<style>
 	*{
 		margin  : 0;
@@ -43,10 +43,12 @@
 				$p.removeClass('bounce shake');
 			});
 			$p.on('click',function(){
-				$p.addClass('shake');
+				// 連続でクリック出来ます。
+				$p.removeClass('shake');
+				setTimeout(function(){
+					$p.addClass('shake');
+				},1)
 			})
-			// $p.trigger("mouseover");
-			// ↑triggerを使うと引数(上の場合はマウスオーバー)の処理が実行されます。
 		})
 	</script>
 </head>

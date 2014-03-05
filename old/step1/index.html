@@ -2,7 +2,7 @@
 <html lang="ja-JP">
 <head>
 	<meta charset="UTF-8">
-	<title>DmP03 step2</title>
+	<title>DmP03 step1</title>
 	<style>
 	*{
 		margin  : 0;
@@ -25,34 +25,18 @@
 		box-sizing : border-box;
 	}
 	.ptag{
-		display     : block;
+		display     : inline-block;
 		padding     : 0.5em 1em;
 		background  : #F7F;
 		cursor      : pointer;
 	}
 	</style>
-	<link rel="stylesheet" href="animate.css">
 	<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
-	<script>
-		$(function(){
-			var $p = $('.ptag');
-			$p.on('mouseover',function(){
-				$p.addClass('bounce');
-			});
-			$p.on('mouseout',function(){
-				$p.removeClass('bounce shake');
-			});
-			$p.on('click',function(){
-				$p.addClass('shake');
-			})
-			// $p.trigger("mouseover");
-			// ↑triggerを使うと引数(上の場合はマウスオーバー)の処理が実行されます。
-		})
-	</script>
+	<script></script>
 </head>
 <body>
 	<div id="box">
-		<p class="ptag animated">Pタグ</p>
-	</div>
+		<p class="ptag">Pタグ</p>
+	<div>
 </body>
 </html>

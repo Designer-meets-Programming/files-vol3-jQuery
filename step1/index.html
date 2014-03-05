@@ -25,18 +25,59 @@
 		box-sizing : border-box;
 	}
 	.ptag{
-		display     : inline-block;
+		display     : block;
 		padding     : 0.5em 1em;
 		background  : #F7F;
 		cursor      : pointer;
 	}
 	</style>
+	<link rel="stylesheet" href="animate.css">
 	<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
-	<script></script>
+	<script>
+		$(function(){
+			$ptag = $('.ptag');
+			// $('DOM要素').on('イベントタイプ','処理')
+			// でイベントタイプが発生したときの処理を登録します。
+			$ptag.on('click',function(e){
+				$ptag.css('background','#000');
+				// 複数指定する場合は
+				// $ptag.css({
+				// 	'background' : '#000',
+				// 	'font-size'  : '50px'
+				// })
+				// $ptag.css('background');
+				// とすると、現在$ptagに適用されているbackgroundの値が返ってきます。
+
+				// .ptagが複数ある場合、上記の書き方ではクリックされていないものまで全て書き換わってしまいます。
+				// わかりやすいように$ptag.css(...)と書いていますが、実際利用するときは
+				// クリックされた要素を指定します。
+				// $(this).css('background','#000')
+				// もしくは
+				// $(e.target).css('background','#000')
+				// この引数eからはクリックされた要素の状態やイベントの情報が取得できます。
+				// e.targetはクリックされた要素
+				// e.typeはユーザーが行った動作(上記の例ではclickと返ってきます。)
+				// eの名前はeでもeventでもevtでもなんでも構いません。
+				// ただ引数の名前は他の人が見て臆測がつく内容にしておくことがベターです。
+			});
+		})
+
+		// $ptag.off('click')
+		// とするとクリックされたときの処理が全てなくなります。
+		// $ptag.off()
+		// と何も指定しなければ
+		// $ptagに登録した全て処理がなくなります。
+
+		// $(function(){})
+		// は
+		// $(document).ready(function(){})
+		// の省略形です。
+		// DOMの読み込みが完了した段階で実行されます。
+	</script>
 </head>
 <body>
 	<div id="box">
-		<p class="ptag">Pタグ</p>
-	<div>
+		<p class="ptag animated">Pタグ</p>
+	</div>
 </body>
 </html>
